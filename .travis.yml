@@ -19,5 +19,5 @@ install:
   - pip install awscli
 
 script:
-  - cd ~/build/frankgreco/alexa/src && zip -r ~/build/frankgreco/alexa/randomQuote.zip *
-  - cd ~/build/frankgreco/alexa/src && aws lambda update-function-code --function-name $ARN --zip-file fileb://$(pwd)/randomQuote.zip --publish
+  - cd ~/build/frankgreco/alexa/src && zip -r randomQuote.zip *
+  - cd ~/build/frankgreco/alexa/src && aws lambda update-function-code --function-name $ARN --zip-file fileb://randomQuote.zip --publish
