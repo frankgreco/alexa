@@ -1,7 +1,9 @@
-language: node_js
 sudo: required
+language: node_js
 node_js:
   - "4.3"
+python:
+  - "2.7"
 
 env:
   global:
@@ -18,11 +20,8 @@ addons:
       - g++-4.8
       - zip
       - jq
-      - libffi-dev
-      - libssl-dev
 
 install:
-  - pip install pyopenssl ndg-httpsclient pyasn1
   - pip install awscli
 
 script:
