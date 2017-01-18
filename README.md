@@ -5,7 +5,7 @@ Welcome to all of my Alexa skills! For now, i'm hosting them all in the same rep
 
 [AWS Lambda](https://aws.amazon.com/lambda/) is being used to host the source code for all of the skills.
 
-See each skill's README for more information.
+See each skill's README for more information.g
 
 ## directory structure
 This project has a top level `skills/` directory that contains a list of directories each corresponding to a different Alexa skill. Each skill contains a directory that contains all of the speech assets associated with that skill and another directory that contains the source code. Here's an example structure:
@@ -47,8 +47,8 @@ The `deploy.sh` script loops through each skill in the `skills/` directory and p
 
 1. set an environment variable `FUNCTION_NAME` to the name parameter of the `package.json` file associated with that skill.
 2. set an environment variable `ARN` with the Amazon resource name (arn) that uniquely identifies your AWS Lambda function. The format of an arn is `arn:aws:lambda:$AWS_DEFAULT_REGION:$ACCOUNT_NUMBER:function:$FUNCTION_NAME`. The `AWS_DEFAULT_REGION` and `ACCOUNT_NUMBER` environment variables is set in the `.travis.yml` file. If you would like to encrypt these variables, see [here](https://docs.travis-ci.com/user/environment-variables/).
-3. install all of the dependencies for your skill (if any). **Important:** If your `index.js` file `requires` any code from within your projects (e.g. `require('./dependency')`), it must be included as a node_module! The easiest way to do this is to just create `src/dependency/` and include it as a dependency in your `src/package.json`: `"dependency": "file:dependency"`. When an `npm install` is performed, it will be included in the node_modules directory.
-4. zip up `index.js` and `node_modules`
+3. install all of the dependencies for your skill (if any).
+4. zip up all the files in the `src/` directory. Note that we are zipping up the files in the directory and not the directory itself.
 5. use the [awscli](https://aws.amazon.com/cli/) to upload the zip file to AWS Lambda and deploy the new code. **Important:** this command will only run successfully if you have the awscli configured for your account. In addition, you must have the `lambda:UpdateFunctionCode` permission in order to successfully update the code. While there are multiple ways to [configure](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) the awscli, I utilize environment variables and after encrypting them, set them in the `.travis.yml` file. Here are the environment variables that need to be set:
     * `AWS_ACCESS_KEY_ID`
     * `AWS_SECRET_ACCESS_KEY`
