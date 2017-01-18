@@ -12,13 +12,12 @@ env:
 
 addons:
   apt:
-    packages:
-    - zip
-    - jq
     sources:
       - ubuntu-toolchain-r-test
     packages:
       - g++-4.8
+      - zip
+      - jq
 
 install:
   - pip install awscli
