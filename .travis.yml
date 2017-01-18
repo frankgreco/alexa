@@ -1,11 +1,7 @@
-language:
-  - node_js
-  - python
+language: node_js
 sudo: required
 node_js:
   - "4.3"
-python:
-  - "2.7"
 
 env:
   global:
@@ -19,6 +15,10 @@ addons:
     packages:
     - zip
     - jq
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - g++-4.8
 
 install:
   - pip install awscli
