@@ -3,5 +3,11 @@ sudo: required
 python:
   - "2.7"
 
+addons:
+  apt:
+    packages:
+    - zip
+
 install:
   - pip install awscli
+  - zip alexa ~/build/frankgreco/alexa/src
