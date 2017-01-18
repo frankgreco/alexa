@@ -10,4 +10,6 @@ addons:
 
 install:
   - pip install awscli
+
+script:
   - zip alexa ~/build/frankgreco/alexa/src
