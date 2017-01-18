@@ -1,0 +1,30 @@
+{
+  "intents": [
+    {
+      "intent": "AMAZON.HelpIntent"
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "GetQuote",
+      "slots": [
+        {
+        	"name": "ACTION",
+        	"type": "ACTION_VERB"
+        },
+        {
+        	"name": "QUOTE",
+        	"type": "QUOTE_NOUN"
+        },
+        {
+        	"name": "QUOTE_ADJ",
+          	"type": "QUOTE_ADJECTIVE"
+        }
+      ]
+    }
+  ]
+}

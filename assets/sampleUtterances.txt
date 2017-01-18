@@ -1,0 +1,12 @@
+GetQuote for a {QUOTE}
+GetQuote for an {QUOTE}
+GetQuote for an {QUOTE_ADJ} {QUOTE}
+GetQuote for a {QUOTE_ADJ} {QUOTE}
+GetQuote to {ACTION} me a {QUOTE}
+GetQuote to {ACTION} a {QUOTE}
+GetQuote to {ACTION} me some inspiration
+GetQuote to  {ACTION} some inspiration
+GetQuote to {ACTION} me inspiration
+GetQuote to {ACTION} me an {QUOTE_ADJ} {QUOTE}
+GetQuote to {ACTION} me a {QUOTE_ADJ} {QUOTE}
+GetQuote to {ACTION} me something inspirational
