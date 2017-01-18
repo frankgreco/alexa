@@ -18,8 +18,11 @@ addons:
       - g++-4.8
       - zip
       - jq
+      - libffi-dev
+      - libssl-dev
 
 install:
+  - pip install pyopenssl ndg-httpsclient pyasn1
   - pip install awscli
 
 script:
