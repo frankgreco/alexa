@@ -5,6 +5,8 @@ Welcome to all of my Alexa skills! For now, i'm hosting them all in the same rep
 
 [AWS Lambda](https://aws.amazon.com/lambda/) is being used to host the source code for all of the skills.
 
+See each skill's README for more information.
+
 ## directory structure
 This project has a top level `skills/` directory that contains a list of directories each corresponding to a different Alexa skill. Each skill contains a directory that contains all of the speech assets associated with that skill and another directory that contains the source code. Here's an example structure:
 
@@ -35,11 +37,11 @@ This project has a top level `skills/` directory that contains a list of directo
 ## continuous deployment
 This project contains a `deploy.sh` file which will update and re-deploy the source code for each Alexa skill through our build tool, [Travis-CI](https://travis-ci.org/).
 
-*NOTE:* due to current limitations of Alexa, no cli tools or apis exist for updating or creating skills although it is on Amazons roadmap to do so. See [this post](https://forums.developer.amazon.com/questions/42864/automate-alexa-deployments.html) for more info.
+***NOTE:*** due to current limitations of Alexa, no cli tools or apis exist for updating or creating skills although it is on Amazons roadmap to do so. See [this post](https://forums.developer.amazon.com/questions/42864/automate-alexa-deployments.html) for more info.
 
-*NOTE:* the `deploy.sh` file assumes you already have an AWS Lambda function already created for each skill. Later, I hope to make it so that if a function doesn't already exist, it will just create it for you.
+***NOTE:*** the `deploy.sh` file assumes you already have an AWS Lambda function already created for each skill. Later, I hope to make it so that if a function doesn't already exist, it will just create it for you.
 
-*NOTE:* in each skills `src/package.json` file, the `name` paramater **must** match the name of your AWS lambda function.
+***NOTE:*** in each skills `src/package.json` file, the `name` paramater **must** match the name of your AWS lambda function.
 
 The `deploy.sh` script loops through each skill in the `skills/` directory and performs the following steps to complete a successful deployment for each skill:
 
