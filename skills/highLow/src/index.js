@@ -18,7 +18,6 @@ var states = {
 var newSessionHandlers = {
     'NewSession': function() {
         if(Object.keys(this.attributes).length === 0) {
-            this.attributes['endedSessionCount'] = 0;
             this.attributes['gamesPlayed'] = 0;
         }
         this.handler.state = states.STARTMODE;
@@ -34,7 +33,6 @@ var newSessionHandlers = {
     },
     'SessionEndedRequest': function () {
         console.log('session ended!');
-        //this.attributes['endedSessionCount'] += 1;
         this.emit(":tell", "Goodbye!");
     }
 };
@@ -67,7 +65,6 @@ var startGameHandlers = Alexa.CreateStateHandler(states.STARTMODE, {
     },
     'SessionEndedRequest': function () {
         console.log("SESSIONENDEDREQUEST");
-        //this.attributes['endedSessionCount'] += 1;
         this.emit(':tell', "Goodbye!");
     },
     'Unhandled': function() {
