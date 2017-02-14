@@ -22,7 +22,7 @@ var newSessionHandlers = {
             this.attributes['gamesPlayed'] = 0;
         }
         this.handler.state = states.STARTMODE;
-        this.emit(':ask', 'Welcome to High Low guessing game. You have played '
+        this.emit(':ask', 'Welcome to Northwestern Mutual\s High Low guessing game. You have played '
             + this.attributes['gamesPlayed'].toString() + ' times. would you like to play?',
             'Say yes to start the game or no to quit.');
     },
@@ -114,7 +114,6 @@ var guessModeHandlers = Alexa.CreateStateHandler(states.GUESSMODE, {
     },
     'SessionEndedRequest': function () {
         console.log("SESSIONENDEDREQUEST");
-        this.attributes['endedSessionCount'] += 1;
         this.emit(':tell', "Goodbye!");
     },
     'Unhandled': function() {
