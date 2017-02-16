@@ -23,7 +23,7 @@ var newSessionHandlers = {
             this.attributes['gamesPlayed'] = 0;
         }
         this.handler.state = states.STARTMODE;
-        this.emit(':ask', 'Welcome to Northwestern Mutual\s guessing game. You have played '
+        this.emit(':ask', 'Welcome to guessing game. You have played '
             + this.attributes['gamesPlayed'].toString() + ' times. would you like to play?',
             'Say yes to start the game or no to quit.');
     },
